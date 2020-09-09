@@ -39,7 +39,7 @@ public class VPSProgress
 [System.Serializable]
 public class QsProgress
 {
-    public string questionId;
+    public int questionId;
     public bool attemptStatus;
     public int marks;
 }
