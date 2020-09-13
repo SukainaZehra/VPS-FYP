@@ -15,7 +15,8 @@ public class VPSDATA : ScriptableObject
 public class VPSQuestion
 {
     public string question;
-    public AudioClip answer; 
+    public AudioClip answer;
+    public bool isCorrect;
 }
 [System.Serializable]
 public class VPSProgress
@@ -39,7 +40,7 @@ public class VPSProgress
 [System.Serializable]
 public class QsProgress
 {
-    public string questionId;
+    public int questionId;
     public bool attemptStatus;
     public int marks;
 }
