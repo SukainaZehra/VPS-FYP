@@ -8,6 +8,7 @@ public class timer : MonoBehaviour
 {
     float currentTime = 0f;
     float startTime = 15f;
+    static bool isStarted;
 
     [SerializeField] Text countdownText;
 
@@ -15,7 +16,23 @@ public class timer : MonoBehaviour
 
     void Start()
     {
-        currentTime = startTime;
+        if (isStarted == false)
+        {
+            isStarted = true;
+            currentTime = startTime;
+        }
+        else 
+        { 
+            currentTime = PlayerPrefs.GetFloat("cTime", startTime); 
+        }
+
+    }
+
+    void OnDestroy() 
+    {
+        PlayerPrefs.SetFloat("cTime", currentTime);
+
+
     }
 
     void Update()
