@@ -16,7 +16,7 @@ public class Temperature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextBox.GetComponent<Text>().text="TEMPERATURE = " + number + " °C";
+        TextBox.GetComponent<Text>().text="TEMPERATURE = " + AppConfig.sharedInstance().temperature + " °C";
     }
     public void RandomNumber(){
         number = Random.Range (101f,105f);
