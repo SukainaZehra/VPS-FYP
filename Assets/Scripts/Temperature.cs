@@ -10,13 +10,18 @@ public class Temperature : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         StartCoroutine(delayTextDisplay());
     }
+
+    IEnumerator delayTextDisplay() {
+        yield return new WaitForSeconds(3);
+        TextBox.GetComponent<Text>().text="TEMPERATURE = " + AppConfig.sharedInstance().temperature + " °C";
+    } 
 
     // Update is called once per frame
     void Update()
     {
-        TextBox.GetComponent<Text>().text="TEMPERATURE = " + AppConfig.sharedInstance().temperature + " °C";
+       
     }
     public void RandomNumber(){
         number = Random.Range (101f,105f);
